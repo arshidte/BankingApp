@@ -1,0 +1,48 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container">
+        <div class="row bankName">
+            <h5>Kintex Digital</h5>
+            <p>Next Generation Banking</p>
+        </div>
+        <div class="row">
+            <h5>{{aim}}</h5>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="mb-3 loginTab">
+                <h1 class="display-6 d-flex justify-content-center signIn">Sign up</h1>
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="uname" name="uname" formControlName="uname" placeholder="User Name">
+                    <!--validate and if not, show message-->
+                    <div *ngIf="(this.registerForm.get('uname')?.touched||this.registerForm.get('uname')?.dirty)&&this.registerForm.get('uname')?.errors"
+                    style="color: red;">Please enter a valid Name</div>
+
+                    <label class="form-label">Account Number</label>
+                    <!--(change)="getAccno($event)"-->
+                    <!--Template reference variable - #acno-->
+                    <input type="number" class="form-control" id="acno" name="acno" formControlName="acno" placeholder="Account Number">
+                    <!--validate and if not, show message-->
+                    <div *ngIf="(this.registerForm.get('acno')?.touched||this.registerForm.get('acno')?.dirty)&&this.registerForm.get('acno')?.errors"
+                    style="color: red;">Please enter a valid Account number</div>
+
+                    <label class="form-label">Password</label>
+                    <!--(change)="getPwd($event)"-->
+                    <!--Template reference variable - #pswd-->
+                    <input type="password" class="form-control" id="bkPwd" name="pswd" formControlName="pswd" placeholder="Password">
+                    <!--validate and if not, show message-->
+                    <div *ngIf="(this.registerForm.get('pswd')?.touched||this.registerForm.get('pswd')?.dirty)&&this.registerForm.get('pswd')?.errors"
+                    style="color: red;">Please enter a valid Password</div>
+
+                    <button style="margin-top: 10px;" class="btn btn-success">Submit</button>
+                </form>
+                <p style="color: white;align-items: baseline;">Already Registered? <a routerLink="">Login</a> </p>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

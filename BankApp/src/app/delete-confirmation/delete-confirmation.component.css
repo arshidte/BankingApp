@@ -1,0 +1,12 @@
+.lastButtons{
+    display: flex;
+    justify-content: end;
+}
+.text{
+    display: flex;
+    justify-content: end;
+}
+.mainDiv{
+    background-color: rgba(0,0,0,.5);
+    padding: 20px;
+}

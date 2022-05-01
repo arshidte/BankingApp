@@ -1,0 +1,35 @@
+                        Server side - nodeJs
+    
+    1. npm init (Installs package.json)
+
+    2. Create index.js
+
+    3. Install express (npm i express)
+
+    4. Import express to index.js
+
+    5. Create an app using express
+    
+
+                    Middleware
+    1. Application specific Middleware
+        Available in entire app.
+
+    2. Router specific Middleware
+        Available in specific routers only.
+
+                    JWT token for authentication
+    
+    npm i jsonwebtoken
+
+    Token generation
+    Token verification
+
+    Mongoose helps to connect the server to DB
+    
+
+    Front-end backend integration
+
+    Cors(Cross origin resource sharing)
+        npm i Cors
+        

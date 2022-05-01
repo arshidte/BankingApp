@@ -1,0 +1,41 @@
+.mainDiv{
+    background-image: url(https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    filter: blur(8px);
+  -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.loginTab{
+    background: rgba(0, 0, 0, 0.658);
+    padding: 1rem;
+    border-radius: 5px;
+}
+label{
+    color: #fff;
+}
+.bankName{
+    margin-top: -5px;
+    margin-bottom: -1rem;
+}
+p{
+    margin-top: -5px;
+    color: rgb(128, 128, 128);
+}
+h5{
+    color: #fff;
+}
+.signIn{
+    color: #fff;
+}
+h2,h3{
+    color: black;
+}
+.dDelete{
+    float: right;
+}
+.c1{
+    background-color: gray;
+    opacity: 0.2;
+}

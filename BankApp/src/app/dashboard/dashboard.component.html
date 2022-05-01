@@ -1,0 +1,121 @@
+<div class="mainDiv"></div>
+<nav class="navbar navbar-light bg-dark">
+    <div class="container">
+        <div class="row bankName">
+            <h5>Kintex Digital</h5>
+            <p>Next Generation Banking</p>
+        </div>
+        <div class="row">
+            <h5>Welcome {{currentUser}}🙂</h5>
+            <h6>Login Time: {{lDate | date :'short'}}</h6>
+        </div>
+        <div class="row">
+            <h5><a routerLink="/transactions">Transactions</a></h5>
+            <button class="btn btn-warning dDelete" (click)="logout()">Logout</button>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row mt-5">
+        <p class="text-danger bg-white rounded">Kintex Digital never asks for confidential information such as PIN and
+            OTP from customers. Any such call can
+            be made only by a fraudster. Please do not share personal info.
+        </p>
+
+        <div class="container">
+            <div class="row">
+                <div class="mt-3">
+                    <button class="btn btn-danger dDelete" (click)="deleteAccount()">Delete Account</button>
+                </div>
+                <app-delete-confirmation (onDelete)="deleteFromParent($event)" (onCancel)="cancelFromParent()" [item] = "acno" ></app-delete-confirmation>
+            </div>
+        </div>
+
+        <div class="col-2"></div>
+        <div [ngClass]="acno?'c1':''" class="col-md-4">
+            <div class="mb-3 loginTab">
+                <h1 appHighlight class="display-6 d-flex justify-content-center signIn">Deposit</h1>
+                <form [formGroup]="depositForm" (ngSubmit)="deposit()">
+                    <label class="form-label">Account Number</label>
+                    <input type="number" class="form-control" id="acno" name="dacno" formControlName="dacno"
+                        placeholder="Account Number">
+                    <div *ngIf="(this.depositForm.get('dacno')?.touched||this.depositForm.get('dacno')?.dirty)&&this.depositForm.get('dacno')?.errors"
+                        style="color: red;">Please Enter a valid account number</div>
+
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="bkPwd" name="dpswd" formControlName="dpswd"
+                        placeholder="Password">
+                    <div *ngIf="(this.depositForm.get('dpswd')?.touched||this.depositForm.get('dpswd')?.dirty)&&this.depositForm.get('dpswd')?.errors"
+                        style="color: red;">Please Enter a valid password</div>
+
+                    <label class="form-label">Amount</label>
+                    <input type="number" class="form-control" id="bkPwd" name="damount" formControlName="damount"
+                        placeholder="₹">
+                    <div *ngIf="(this.depositForm.get('damount')?.touched||this.depositForm.get('damount')?.dirty)&&this.depositForm.get('damount')?.errors"
+                        style="color: red;">Please Enter a valid amount</div>
+
+                    <button type="submit" style="margin-top: 10px;" class="btn btn-success">Deposit</button>
+                </form>
+            </div>
+        </div>
+        <div [ngClass]="acno?'c1':''" class="col-md-4">
+            <div class="mb-3 loginTab">
+                <h1 appHighlight class="display-6 d-flex justify-content-center signIn">Withdraw</h1>
+                <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
+                    <label class="form-label">Account Number</label>
+                    <input type="number" class="form-control" id="acno" name="wacno" formControlName="wacno"
+                        placeholder="Account Number">
+                    <div *ngIf="(this.withdrawForm.get('wacno')?.touched||this.withdrawForm.get('wacno')?.dirty)&&this.withdrawForm.get('wacno')?.errors"
+                        style="color: red;">Please Enter a valid account number</div>
+
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="bkPwd" name="wpswd" formControlName="wpswd"
+                        placeholder="Password">
+                    <div *ngIf="(this.withdrawForm.get('wpswd')?.touched||this.withdrawForm.get('wpswd')?.dirty)&&this.withdrawForm.get('wpswd')?.errors"
+                        style="color: red;">Please Enter a valid Password</div>
+
+                    <label class="form-label">Amount</label>
+                    <input type="number" class="form-control" id="bkPwd" name="wamount" formControlName="wamount"
+                        placeholder="₹">
+                    <div *ngIf="(this.withdrawForm.get('wamount')?.touched||this.withdrawForm.get('wamount')?.dirty)&&this.withdrawForm.get('wamount')?.errors"
+                        style="color: red;">Please Enter a valid Password</div>
+
+                    <button type="submit" style="margin-top: 10px;" class="btn btn-success">Withdraw</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+<div class="container-fluid bg-success p-5 mt-5">
+    <div class="row d-flex align-items-center">
+        <div class="col-lg-3 col-sm-6 d-flex justify-content-center">
+            <div class="d-flex align-items-center flex-column mb-3">
+                <img src="../../assets/image/23259159.jpg" alt="">
+                <h2>12713226</h2>
+                <h3>Happy Customers</h3>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 d-flex justify-content-center mb-3">
+            <div class="d-flex align-items-center flex-column">
+                <img src="../../assets/image/23259160.jpg" alt="">
+                <h2>1291</h2>
+                <h3>Banking Outlets</h3>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 d-flex justify-content-center mb-3">
+            <div class="d-flex align-items-center flex-column">
+                <img src="../../assets/image/23259161.jpg" alt="">
+                <h2>1442</h2>
+                <h3>ATMs</h3>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 d-flex justify-content-center">
+            <div class="d-flex align-items-center flex-column">
+                <img src="../../assets/image/23259162.jpg" alt="">
+                <h2>440</h2>
+                <h3>Cash Recyclers</h3>
+            </div>
+        </div>
+    </div>
+</div>

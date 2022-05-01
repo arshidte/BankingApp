@@ -1,0 +1,22 @@
+.loginTab{
+    background: rgba(0, 0, 0, 0.658);
+    padding: 1rem;
+    border-radius: 5px;
+}
+label{
+    color: #fff;
+}
+.bankName{
+    margin-top: -5px;
+    margin-bottom: -1rem;
+}
+p{
+    margin-top: -5px;
+    color: rgb(128, 128, 128);
+}
+h5{
+    color: #fff;
+}
+.signIn{
+    color: #fff;
+}

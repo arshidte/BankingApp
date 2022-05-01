@@ -1,0 +1,38 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container">
+        <div class="row bankName">
+            <h5>Kintex Digital</h5>
+            <p>Next Generation Banking</p>
+        </div>
+        <div class="row">
+            <h5>{{aim}}</h5>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="mb-3 loginTab">
+                <h1 class="display-6 d-flex justify-content-center signIn">Transactions</h1>
+                <table class="table">
+                    <thead>
+                        <tr class="table-light">
+                            <th scope="row">SI. No.</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-success" *ngFor="let transaction of transactions; let i=index">
+                        <td scope="row">{{i+1}}</td>
+                        <td>{{transaction.type}}</td>
+                        <td>{{transaction.amount}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>

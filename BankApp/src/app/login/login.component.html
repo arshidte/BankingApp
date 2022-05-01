@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container">
+        <div class="row bankName">
+            <h5>Kintex Digital</h5>
+            <p>Next Generation Banking</p>
+        </div>
+        <div class="row">
+            <h5>{{aim}}</h5>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="mb-3 loginTab">
+                <h1 class="display-6 d-flex justify-content-center signIn">Sign in</h1>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    <label class="form-label">Account Number</label>
+                    <!--(change)="getAccno($event)"-->
+                    <!--Template reference variable - #acno-->
+                    <!--[(ngModel)]-->
+                    <input type="number" class="form-control" id="acno" name="acno" formControlName="acno" [placeholder]="accno">
+                    <div *ngIf="(this.loginForm.get('acno')?.touched||this.loginForm.get('acno')?.dirty)&&this.loginForm.get('acno')?.errors" style="color: red;">Enter valid account Number</div>
+
+                    <label class="form-label">Password</label>
+                    <!--(change)="getPwd($event)"-->
+                    <!--Template reference variable - #pswd-->
+                    <!--[(ngModel)]-->
+                    <input type="password" class="form-control" id="bkPwd" name="pswd" formControlName="pswd" [placeholder]="pwd">
+                    <div *ngIf="(this.loginForm.get('pswd')?.touched||this.loginForm.get('pswd')?.dirty)&&this.loginForm.get('pswd')?.errors" style="color: red;">Enter correct pasword</div>
+                    <button style="margin-top: 10px;" class="btn btn-success">Submit</button>
+                </form>
+                <p style="color: white;align-items: baseline;">Not a User? <a routerLink="register">Register</a> </p>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
